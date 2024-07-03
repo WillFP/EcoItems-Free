@@ -21,6 +21,7 @@ object EcoItemsRecipes : ConfigCategory("recipe", "recipes") {
 
     override fun acceptConfig(plugin: LibreforgePlugin, id: String, config: Config) {
         if (recipes >= 10) {
+            plugin.logger.warning("Recipe $id was not registered.")
             plugin.logger.warning("The free version of EcoItems only supports 10 custom recipes.")
             plugin.logger.warning("Purchase the full version of EcoItems to remove this restriction!")
             return

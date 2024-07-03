@@ -36,6 +36,7 @@ object EcoItems : ConfigCategory("item", "items") {
 
     override fun acceptConfig(plugin: LibreforgePlugin, id: String, config: Config) {
         if (registry.values().size >= 10) {
+            plugin.logger.warning("Item $id was not registered.")
             plugin.logger.warning("The free version of EcoItems only supports 10 custom items.")
             plugin.logger.warning("Purchase the full version of EcoItems to remove this restriction!")
             return
